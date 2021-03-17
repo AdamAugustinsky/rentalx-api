@@ -5,7 +5,7 @@ interface ICreateCategory {
   description: string,
 }
 
-class CreateCategoryService {
+class CreateSpecificationService {
   constructor(private categoriesRepository: ICategoriesRepository) {}
 
   execute({ name, description }: ICreateCategory) {
@@ -18,4 +18,4 @@ class CreateCategoryService {
   }
 }
 
-export { CreateCategoryService };
+export { CreateSpecificationService };
