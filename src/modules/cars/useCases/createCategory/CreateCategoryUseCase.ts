@@ -1,0 +1,21 @@
+import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
+
+interface ICreateCategory {
+  name: string,
+  description: string,
+}
+
+class CreateCategoryUseCase {
+  constructor(private categoriesRepository: ICategoriesRepository) {}
+
+  execute({ name, description }: ICreateCategory) {
+    const nameAlreayInUse = this.categoriesRepository.findByName(name);
+
+    if (nameAlreayInUse)
+      throw new Error("name already exists!");
+
+    this.categoriesRepository.create({ name, description });
+  }
+}
+
+export { CreateCategoryUseCase };
