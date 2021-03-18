@@ -1,14 +1,13 @@
-import { ISpecificationsRepository } from "../repositories/ISpecificationsRepository";
+import { ISpecificationsRepository } from "../../repositories/ISpecificationsRepository";
 
-interface ICreateCategory {
+interface ICreateSpecification {
   name: string,
   description: string,
 }
 
-class CreateSpecificationService {
+class CreateSpecificationUseCase {
   constructor(private specificationsRepository: ISpecificationsRepository) {}
-
-  execute({ name, description }: ICreateCategory) {
+  execute({ name, description }: ICreateSpecification) {
     const nameAlreayInUse = this.specificationsRepository.findByName(name);
 
     if (nameAlreayInUse)
@@ -18,4 +17,4 @@ class CreateSpecificationService {
   }
 }
 
-export { CreateSpecificationService };
+export { CreateSpecificationUseCase };
