@@ -8,13 +8,13 @@ interface ICreateCategory {
 class CreateCategoryUseCase {
   constructor(private categoriesRepository: ICategoriesRepository) {}
 
-  execute({ name, description }: ICreateCategory) {
-    const nameAlreayInUse = this.categoriesRepository.findByName(name);
+  async execute({ name, description }: ICreateCategory): Promise<void> {
+    const nameAlreayInUse = await this.categoriesRepository.findByName(name);
 
     if (nameAlreayInUse)
       throw new Error("name already exists!");
 
-    this.categoriesRepository.create({ name, description });
+    await this.categoriesRepository.create({ name, description });
   }
 }
 
