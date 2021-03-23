@@ -1,6 +1,6 @@
 {
     "type": "postgres",
-    "host": "172.21.0.2",
+    "host": "localhost",
     "username": "postgres",
     "password": "postgres",
     "database": "rentx",
