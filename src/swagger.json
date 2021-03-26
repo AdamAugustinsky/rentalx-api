@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "rentalx-api Documenntion",
+        "title": "RentX-api Documenntion",
         "description": "thix is a rent API",
         "version": "1.0.0",
         "contact": {
@@ -77,6 +77,43 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        },
+        "/specifications": {
+            "post": {
+                "tags": [
+                    "Specification"
+                ],
+                "summary": "Create a specification",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "specification name example",
+                                    "description": "specification description example"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Sucessfully Created"
+                    },
+                    "500": {
+                        "description": "Specificatoin already exists"
                     }
                 }
             }
