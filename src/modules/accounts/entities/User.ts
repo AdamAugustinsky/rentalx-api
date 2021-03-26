@@ -26,7 +26,7 @@ class User {
   isAdmin: boolean;
 
   @CreateDateColumn()
-  created_at: Date;
+  created_at?: Date;
 
   constructor(
     name: string,
@@ -46,7 +46,6 @@ class User {
     this.password = password;
     this.driver_license = driver_license;
     this.isAdmin = isAdmin;
-    this.created_at = new Date();
   }
 
 }
