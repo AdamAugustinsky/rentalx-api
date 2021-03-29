@@ -11,7 +11,13 @@ class CreateUserUseCase {
   ) {}
 
   async execute({name, email, password, driver_license}: ICreateUserDTO): Promise<void> {
+
+    const emailAlreadyInUse = await this.usersRepository.findByEmail(email);
+
+    if(emailAlreadyInUse) throw new Error("Email already in use");
+
     const passwordHash = await hash(password, 8);
+
     await this.usersRepository.create({
       name,
       email,
