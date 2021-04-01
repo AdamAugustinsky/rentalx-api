@@ -22,6 +22,9 @@ class User {
   @Column()
   isAdmin: boolean;
 
+  @Column()
+  avatar: string;
+
   @CreateDateColumn()
   created_at?: Date;
 
@@ -30,7 +33,8 @@ class User {
     email: string,
     password: string,
     driver_license: string,
-    isAdmin: boolean
+    isAdmin: boolean,
+    avatar: string,
   ) {
     if(!this.id) {
       this.id = uuidV4();
@@ -41,6 +45,7 @@ class User {
     this.password = password;
     this.driver_license = driver_license;
     this.isAdmin = isAdmin;
+    this.avatar = avatar
   }
 
 }
