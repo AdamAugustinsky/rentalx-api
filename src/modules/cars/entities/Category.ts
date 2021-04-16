@@ -14,16 +14,15 @@ class Category {
   description: string;
 
   @CreateDateColumn()
-  created_at: Date;
+  created_at?: Date;
 
-  constructor(name: string, description: string, created_at: Date) {
+  constructor(name: string, description: string) {
     if(!this.id) {
       this.id = uuidV4();
     }
 
     this.name = name;
     this.description = description;
-    this.created_at = created_at;
   }
 }
 
