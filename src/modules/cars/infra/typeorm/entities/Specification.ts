@@ -17,7 +17,7 @@ class Specification {
   created_at: Date;
 
   constructor(name: string, description: string, created_at: Date) {
-    if(!this.id) {
+    if (!this.id) {
       this.id = uuidV4();
     }
 

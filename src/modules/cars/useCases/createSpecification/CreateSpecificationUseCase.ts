@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../errors/AppError";
-import { ISpecificationsRepository } from "../../repositories/ISpecificationsRepository";
+import { ISpecificationsRepository } from "../../infra/typeorm/repositories/ISpecificationsRepository";
 
 interface ICreateSpecification {
   name: string,
