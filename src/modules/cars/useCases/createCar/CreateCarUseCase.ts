@@ -1,5 +1,5 @@
 import { injectable, inject } from 'tsyringe';
-import { ICarsRepository } from '../../infra/typeorm/repositories/ICarsRepository';
+import { ICarsRepository } from '../../infra/repositories/ICarsRepository';
 import { AppError } from '../../../../errors/AppError';
 import { Car } from '../../infra/typeorm/entities/Car';
 
@@ -13,11 +13,11 @@ interface IRequest {
   category_id: string;
 }
 
-// @injectable()
+@injectable()
 class CreateCarUseCase {
 
   constructor(
-    // @inject("CarsRepository")
+    @inject("CarsRepository")
     private carsRepository: ICarsRepository
   ) { }
 
