@@ -1,4 +1,4 @@
-import { CarsRepositoryInMemory } from "../../infra/typeorm/repositories/inMemory/CarsRepositoryInMemory";
+import { CarsRepositoryInMemory } from "../../infra/repositories/inMemory/CarsRepositoryInMemory";
 import { CreateCarUseCase } from "./CreateCarUseCase"
 import { AppError } from '../../../../errors/AppError';
 

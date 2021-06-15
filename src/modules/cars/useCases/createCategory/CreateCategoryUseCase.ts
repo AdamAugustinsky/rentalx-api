@@ -1,7 +1,7 @@
 import { inject, injectable } from 'tsyringe';
 import { AppError } from '../../../../errors/AppError';
 
-import { ICategoriesRepository } from "../../infra/typeorm/repositories/ICategoriesRepository";
+import { ICategoriesRepository } from "../../infra/repositories/ICategoriesRepository";
 
 interface ICreateCategory {
   name: string,
