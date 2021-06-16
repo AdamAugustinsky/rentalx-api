@@ -18,3 +18,5 @@ async function create() {
   await connection.close();
 
 }
+
+create()
