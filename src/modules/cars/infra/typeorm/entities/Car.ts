@@ -2,7 +2,7 @@ import { v4 as uuidV4 } from "uuid";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
 import { Category } from "./Category";
 
-Entity("cars")
+@Entity("cars")
 class Car {
 
   @PrimaryColumn()
@@ -18,7 +18,7 @@ class Car {
   daily_rate: number;
 
   @Column()
-  available = true;
+  available: boolean = true;
 
   @Column()
   license_plate: string;
