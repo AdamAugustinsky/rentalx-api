@@ -28,3 +28,5 @@ class CreateCarController {
     return response.status(201).json(car);
   }
 }
+
+export { CreateCarController }
