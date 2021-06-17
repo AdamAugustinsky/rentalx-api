@@ -1,12 +1,13 @@
 import { v4 as uuidV4 } from "uuid";
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryColumn } from 'typeorm';
 import { Category } from "./Category";
+import { Specification } from "./Specification";
 
 @Entity("cars")
 class Car {
 
   @PrimaryColumn()
-  id?: string;
+  id: string;
   
   @Column()
   name: string;
@@ -35,6 +36,14 @@ class Car {
 
   @Column()
   category_id: string;
+
+  @ManyToMany(() => Specification)
+  @JoinTable({
+    name: "specifications_cars",
+    joinColumns: [{name: "car_id"}],
+    inverseJoinColumn: [{name: "specification_id"}],
+  })
+  specifications: Specification[] | undefined;
 
   @Column()
   created_at?: Date;
