@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { CreateCarController } from "../../../../modules/cars/useCases/createCar/CreateCarController";
-import { ListAllAvailableCarsController } from "../../../../modules/cars/useCases/listCars/ListAllAvailableCarsController";
+import { ListAllAvailableCarsController } from "../../../../modules/cars/useCases/listAllAvailableCars/ListAllAvailableCarsController";
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 import { ensureIsAdmin } from "../middlewares/ensureIsAdmin";
 
